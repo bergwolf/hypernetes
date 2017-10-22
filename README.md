@@ -1,5 +1,11 @@
 # Hypernetes [![Build Status](https://travis-ci.org/hyperhq/hypernetes.svg?branch=master)](https://travis-ci.org/hyperhq/hypernetes)
 
+## Annocement
+
+Hypernetes project has been renamed and migrated to new repo: [Stackube](https://github.com/openstack/stackube). Please enjoy it there!
+
+Stackube is 100% upstream Kubernetes, no fork!
+
 ## What is Hypernetes?
 
 Hypernetes is a secure, multi-tenant [Kubernetes](http://kubernetes.io) distro. Simply put,
