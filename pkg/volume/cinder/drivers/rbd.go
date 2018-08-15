@@ -116,7 +116,7 @@ func (d *RBDDriver) Format(volumeData map[string]interface{}, fsType string) err
 
 	mappedDeviceByte, err := exec.Command(rbdPath, "map", volume.Name).CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("rbd map failed: %v", err)
+		return fmt.Errorf("rbd map %s failed: %v", volume.Name, err)
 	}
 
 	mappedDevice := strings.TrimSpace(string(mappedDeviceByte))
@@ -124,7 +124,7 @@ func (d *RBDDriver) Format(volumeData map[string]interface{}, fsType string) err
 
 	deviceInfo, err := exec.Command(filePath, "-s", mappedDevice).CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("rbd map failed: %v", err)
+		return fmt.Errorf("file -s on volume %s failed: %v", volume.Name, err)
 	}
 
 	if !strings.Contains(string(deviceInfo), fmt.Sprintf("%s filesystem", fsType)) {
